@@ -41,17 +41,36 @@ export class AccountsController {
         const { destination, amount } = body;
         return this.accountsService.deposit(destination, amount);
       }
+
       case AccountType.WITHDRAW: {
         const { origin, amount: withdrawAmount } = body;
         const withdrawResult = this.accountsService.withdraw(
           origin,
           withdrawAmount,
         );
+
         if (!withdrawResult) {
           throw new HttpException('Account not found', HttpStatus.NOT_FOUND);
         }
+
         return { origin: withdrawResult };
       }
+
+      case AccountType.TRANSFER: {
+        const { origin, destination, amount } = body;
+        const transferResult = this.accountsService.transfer(
+          origin,
+          destination,
+          amount,
+        );
+
+        if (!transferResult) {
+          throw new HttpException('Account not found', HttpStatus.NOT_FOUND);
+        }
+
+        return transferResult;
+      }
+
       default:
         throw new HttpException('Invalid event type', HttpStatus.BAD_REQUEST);
     }

@@ -27,4 +27,21 @@ export class AccountsService {
     this.accounts[accountId] -= amount;
     return { id: accountId, balance: this.accounts[accountId] };
   }
+
+  transfer(
+    originId: string,
+    destinationId: string,
+    amount: number,
+  ): {
+    origin: { id: string; balance: number };
+    destination: { id: string; balance: number };
+  } | null {
+    const originAccount = this.withdraw(originId, amount);
+    if (!originAccount) {
+      return null;
+    }
+
+    const destinationAccount = this.deposit(destinationId, amount);
+    return { origin: originAccount, destination: destinationAccount };
+  }
 }
