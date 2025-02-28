@@ -77,7 +77,7 @@ export class AccountsController {
           transferAmount,
         );
         if (!transferResult) {
-          throw new HttpException('Account not found', HttpStatus.NOT_FOUND);
+          throw new HttpException('Error to transfer', HttpStatus.NOT_FOUND);
         }
         return transferResult;
       }

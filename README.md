@@ -4,6 +4,10 @@ Esta é uma API de simulação de conta bancária construída com **NestJS**. El
 
 ---
 
+Este repositório possui o projeto de front-end em: [Bank Dashboard](https://github.com/lcsmelo-0/bank-dashboard).
+
+---
+
 ## Como Rodar Localmente
 
 ### Pré-requisitos
@@ -30,7 +34,7 @@ Esta é uma API de simulação de conta bancária construída com **NestJS**. El
    Crie um arquivo `.env` na raiz do projeto e adicione:
 
    ```env
-   JWT_SECRET=sua_chave_secreta
+   JWT_SECRET=
    ```
 
 4. **Rodar a aplicação**:
@@ -59,7 +63,7 @@ Esta é uma API de simulação de conta bancária construída com **NestJS**. El
 1. **Clonar o repositório**:
 
    ```bash
-   git clone https://github.com/seu-usuario/bank-api.git
+   git clone https://github.com/lcsmelo-0/bank-api.git
    cd bank-api
    ```
 
@@ -67,7 +71,7 @@ Esta é uma API de simulação de conta bancária construída com **NestJS**. El
    Crie um arquivo `.env` na raiz do projeto e adicione:
 
    ```env
-   JWT_SECRET=sua_chave_secreta
+   JWT_SECRET=
    ```
 
 3. **Construir e rodar o container**:
@@ -182,5 +186,9 @@ src/
 - **Passport.js**: Autenticação JWT.
 - **Swagger**: Documentação da API.
 - **Docker**: Containerização da aplicação.
+
+<img src="https://images-cdn.openxcell.com/wp-content/uploads/2024/07/25090553/nodejs-inner.webp" alt="NodeJs" width="50" />
+<img src="https://nestjs.com/img/logo-small.svg" alt="NestJs" width="50" />
+<img src="https://www.docker.com/app/uploads/2023/05/symbol_blue-docker-logo.png" alt="Docker" width="60" />
 
 ---
